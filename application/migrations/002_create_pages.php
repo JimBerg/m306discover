@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Migration_Create_pages extends CI_Migration { //naming convention 
 
-	public function up()
+	/*public function up()
 	{
 		$this->dbforge->add_field(array(
 			'id' => array(
@@ -35,5 +35,5 @@ class Migration_Create_pages extends CI_Migration { //naming convention
 	public function down()
 	{
 		$this->dbforge->drop_table('pages');
-	}
+	}*/
 }

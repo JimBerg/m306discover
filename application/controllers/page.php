@@ -1,6 +1,9 @@
 <?php
 class Page extends Frontend_Controller
 {
+    /**
+     * initialize page model
+     */
     public function __construct()
     {
         parent::__construct();
@@ -8,26 +11,17 @@ class Page extends Frontend_Controller
     }
 
     /**
-     * default action
+     * loads start page of application
+     * => default action
+     * => visible for guests & registered users
      */
     public function index()
     {
-        // $pages = $this->page_model->get();
+        $this->load->view('frontend/_layout_start');
+        /* $pages = $this->page_model->get();
         $pages = $this->page_model->getBy(array('slug' => 'beitrag'));
-        var_dump($pages);
+        var_dump($pages);*/
     }
 
-    /**
-     *
-     */
-    public function save()
-    {
-        $data = array(
-            'title' => "test",
-            'slug' => "neue-seite",
-            'body' => 'testen testentestentestentestentesten testen testen.'
-        );
 
-        $this->page_model->save($data);
-    }
 }

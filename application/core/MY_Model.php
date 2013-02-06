@@ -2,7 +2,6 @@
 class MY_Model extends CI_Model {
 
 	/** using active record method http://ellislab.com/codeigniter/user-guide/database/active_record.html */
-
     protected $_table_name = '';
 	protected $_primary_key = 'id';
 	protected $_primary_filter = 'intval'; //convert to integer
@@ -10,11 +9,10 @@ class MY_Model extends CI_Model {
 	protected $_rules = array();
 	protected $_timestamps = false;
 	
-	public function __construct() 
+	public function __construct()
 	{
 		parent::__construct();
 	}
-
 
     /**
      * @param null $id

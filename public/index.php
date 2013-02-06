@@ -19,7 +19,7 @@ date_default_timezone_set('Europe/Zurich');
  *
  */
 	switch (dirname(__FILE__)) { //root
-		case '/Workspace/websites/cms/public_html':
+		case '/Workspace/websites/discover/public':
 			define('ENVIRONMENT', 'development');
 		break;
 		default:
