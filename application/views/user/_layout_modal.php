@@ -1,6 +1,6 @@
 <?php $this->load->view('user/components/page_head'); ?>
 
-<body style="background: #555;">
+<body>
 
 <div class="modal show" role="dialog">
     <?php $this->load->view($subview); ?>

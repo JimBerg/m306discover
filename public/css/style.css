@@ -40,9 +40,8 @@ body {
 }
 
 body {
-    font: 12px/16px Oswald, Arial, Helvetica, sans-serif;
+    font: 12px/16px Arial, Helvetica, sans-serif;
     color: #333;
-    background: url("../images/subtle-pattern-5.jpg") repeat;
     font-weight: 300;
 }
 
@@ -118,7 +117,7 @@ h6 {}
 /** ----------------------------------------------------------------- *
 * Form Elements
 * ------------------------------------------------------------------- */
-input {
+/*input {
     background: rgb(209,209,209);
     background: -moz-linear-gradient(top,  rgba(209,209,209,1) 0%, rgba(255,255,255,1) 8%, rgba(255,255,255,1) 95%, rgba(216,216,216,1) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(209,209,209,1)), color-stop(8%,rgba(255,255,255,1)), color-stop(95%,rgba(255,255,255,1)), color-stop(100%,rgba(216,216,216,1)));
@@ -192,7 +191,7 @@ label {
 :focus {
     border: 1px solid #999;
     outline: 0px solid transparent;
-}
+}*/
 
 
 /** ---------------------------------------------------------

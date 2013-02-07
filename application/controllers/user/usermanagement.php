@@ -1,4 +1,15 @@
 <?php
+
+/** -------------------------------------------------------------------------
+ * class for usermanagment
+ *
+ * that includes
+ * - registration
+ * - login & logout
+ * - usersession managent
+ * - render views
+ * --------------------------------------------------------------------------  */
+
 class Usermanagement extends User_Controller
 {
     public function __construct()

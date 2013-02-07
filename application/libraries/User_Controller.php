@@ -1,4 +1,13 @@
 <?php
+
+/** --------------------------------------------------------------------------
+ * base class for usermanagment
+ *
+ * load model
+ * set session | get session
+ * get current user
+ * --------------------------------------------------------------------------  */
+
 class User_Controller extends MY_Controller {
 
     /** --------------------------------------------------------------------------
@@ -26,6 +35,7 @@ class User_Controller extends MY_Controller {
             'user/usermanagement/logout',
             'user/usermanagement/register'
         );
+
         if ( in_array( uri_string(), $exception_uris ) == false ) {
             if ( $this->user_model->loggedin() == false ) {
                 redirect( 'user/usermanagement/login' );
