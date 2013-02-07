@@ -17,7 +17,8 @@ class Admin_Controller extends MY_Controller {
         // Login check for every page that extends admin controller, except login, logout
         $exception_uris = array(
             'admin/user/login',
-            'admin/user/logout'
+            'admin/user/logout',
+            'admin/user/register'
         );
         if (in_array(uri_string(), $exception_uris) == false) {
             if ($this->user_model->loggedin() == false) {

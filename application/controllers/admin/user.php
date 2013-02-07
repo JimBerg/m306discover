@@ -48,11 +48,43 @@ class User extends Admin_Controller
     }
 
     /**
-     * create user
+     * render register form
+     * create new user - save records to database
      */
     public function register()
     {
+        $this->data['subview'] = 'admin/user/register';
 
+        if(!empty($_POST)){ //if something was submitted
+            //check if form was correct
+            $rules = $this->user_model->rules;
+            $this->form_validation->set_rules($rules);
+
+            if($this->form_validation->run() == true) {
+                //check if username || email already exists
+                $email = $_POST['email'];
+                $username = $_POST['username'];
+                if($this->user_model->getBy(array('username' => $username))) {
+                    $this->data['error'] = "username existiert bereits";
+                    $this->load->view('admin/_layout_modal', $this->data);
+                    return;
+                } else if($this->user_model->getBy(array('email' => $email))) {
+                    $this->data['error'] = "email existiert bereits";
+                    $this->load->view('admin/_layout_modal', $this->data);
+                    return;
+                } else {
+                    $data = array(
+                        'username' => $username,
+                        'email' => $email,
+                        'password' => $_POST['password']
+                    );
+                    $this->user_model->save($data, $id = null);
+                    $this->user_model->loggedin(); //set login true
+                    redirect('admin/dashboard');
+                }
+            }
+        }
+        $this->load->view('admin/_layout_modal', $this->data);
     }
 
     /**

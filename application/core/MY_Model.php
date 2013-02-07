@@ -54,8 +54,8 @@ class MY_Model extends CI_Model {
     /**
      * same function for update and insert
      * -> without id ==> create == new // else update
-     * @param $data
-     * @param null $id
+     * @param $data array
+     * @param null $id || int $id
      * @return mixed
      */
     public function save($data, $id = null){
@@ -67,10 +67,10 @@ class MY_Model extends CI_Model {
             $data['modified'] = $now;
         }
 
-        // Insert
+        // Insert - if no id exists
         if ($id === null) {
             !isset($data[$this->_primary_key]) || $data[$this->_primary_key] = null;
-            $this->db->set($data);
+            $this->db->set($data); // $data muss als array übergeben werden
             $this->db->insert($this->_table_name);
             $id = $this->db->insert_id();
         }
