@@ -1,8 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/** 
- * autoload controllers that are not extending CI_Controllers
- */
+/** --------------------------------------------------------------------------
+ * autoload controllers that are not extending standard CI_Controllers
+ * in our case User_Controller, Frontend_Controller & Utilities
+ * --------------------------------------------------------------------------  */
  function __autoload($classname) { 
 	if (strpos($classname, 'CI_') !== 0) { //wenn CI_ nicht vorkommt
 		$file = APPPATH . 'libraries/' . $classname . '.php'; //in application pfad ->... nach controllern suchen

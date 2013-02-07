@@ -1,3 +1,3 @@
 <?php
-$config['pagetitle'] = "pagetitle";
-$config['sitename'] = "global sitename setting";
+$config['pagetitle'] = "dis.cover";
+$config['sitename'] = "dis.cover";

@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/components/page_head'); ?>
+<?php $this->load->view('user/components/page_head'); ?>
 
 <body style="background: #555;">
 
@@ -9,4 +9,4 @@
     </div>
 </div>
 
-<?php $this->load->view('admin/components/page_foot'); ?>
+<?php $this->load->view('user/components/page_foot'); ?>

@@ -8,6 +8,7 @@ class User_Model extends MY_Model
     protected $_table_name = 'user';
     protected $_order_by = 'username';
 
+
     /**
      * validation rules
      * @var array
@@ -31,10 +32,10 @@ class User_Model extends MY_Model
         parent::__construct();
     }
 
+
     /**
      * fetch user by email & password
-     * check if they are matching
-     * then login
+     * check if they are matching -> login
      * start session
      */
     public function login()
@@ -55,14 +56,15 @@ class User_Model extends MY_Model
         }
     }
 
+
     /**
-     * logout
-     * destroy session
+     * logout - destroy session
      */
     public function logout()
     {
         $this->session->sess_destroy();
     }
+
 
     /**
      * check if user is logged in
@@ -72,6 +74,7 @@ class User_Model extends MY_Model
     {
         return (bool) $this->session->userdata('loggedin');
     }
+
 
     /**
      * create hash value of password
