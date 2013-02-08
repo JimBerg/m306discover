@@ -101,10 +101,21 @@ class Usermanagement extends User_Controller
                     $this->load->view( 'user/_layout_modal', $this->data );
                     return;
                 } else {
+                    //register coords to location table (if not exists)
+                    $this->load->model( 'location_model' );
+                    $location = array(
+                        'name' => 'My Homebase', //TODO: rename it or reverse geocoding? for real names?
+                        'lat' => $_POST[ 'position-lat' ],
+                        'lng' => $_POST[ 'position-lng' ]
+                    );
+                    $this->location_model->save( $location );
+                    $last_inserted_id = $this->db->insert_id();
+
                     $data = array(
                         'username' => $username,
                         'email' => $email,
-                        'password' => $_POST[ 'password' ]
+                        'password' => $_POST[ 'password' ],
+                        'location_id' => $last_inserted_id
                     );
                     $this->user_model->save( $data, $id = null );
                     $this->user_model->login(); //set session

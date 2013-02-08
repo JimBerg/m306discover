@@ -26,6 +26,8 @@ class User_Model extends MY_Model
         )
     );
 
+    //passwordconfirm match , unique email custom callback
+
 
     public function __construct()
     {

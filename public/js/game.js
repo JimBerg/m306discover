@@ -33,6 +33,13 @@ cg_game.init = function() {
             $( '#map' ).text( "Einleitung nicht gelesen? Alter Browser heisst wirklich: Du spielst nicht mit!" );
         }
     }
+
+    //TODO: SET THIS ONLY ON REGISTRATION // REGISTRATION FORM
+    var lat = window.localStorage.getItem( 'location-home-lat' );
+    var lng = window.localStorage.getItem( 'location-home-lng' );
+    // set hidden fields for storing to database
+    $( 'input#position-lat' ).val( lat );
+    $( 'input#position-lng' ).val( lng );
 }
 
 
@@ -63,14 +70,12 @@ cg_geolocation.onsuccess = function( position ) {
 
         localStorage.setItem( 'location-current-lat', lat );
         localStorage.setItem( 'location-current-lng', lng );
-
-        // set hidden fields for storing to database
-        $( 'input#position-lat' ).val( lat );
-        $( 'input#position-lng' ).val( lng );
     } else if( window.localStorage.getItem( 'location-current-lat' ) != lat || window.localStorage.getItem( 'location-current-lng' ) != lng ) {
         localStorage.setItem( 'location-current-lat', lat );
         localStorage.setItem( 'location-current-lng', lng );
     }
+
+
 }
 
 

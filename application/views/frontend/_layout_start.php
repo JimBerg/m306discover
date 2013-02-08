@@ -8,7 +8,16 @@
 </head>
     <body>
 
+    <ul class="nav">
+        <li><?php echo anchor('user/usermanagement/login', 'Login'); ?></li>
+        <li><?php echo anchor('user/usermanagement/register', 'Registrieren'); ?></li>
+    </ul>
+
+
+
     <p>startseite - bild - description - not logged in</p>
+
+
 
     </body>
 </html>

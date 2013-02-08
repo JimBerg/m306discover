@@ -1,15 +1,18 @@
 (function( $ ) {
 	
 	/* -----------------------------------------------------------*
-	* check if internet connection is available
 	*
-	* if offline - show message
-	* else initialize scripts
-	* 
+	* initialize scripts
 	* declare some variables and fetch DOM Elements
 	* 
 	* ------------------------------------------------------------*/
-	var online = navigator.onLine;
+
+    cg_game.init();
+    var map = $( '#map' ) || false;
+    if( map.length > 0 ) {
+        cg_map.init();
+    }
+ 	/*var online = navigator.onLine;
 	var map = $( '#map' ) || false;
 	var checkIn = $( '#checkIn' ) || false;
 	var cg_markerLayer;
@@ -24,6 +27,6 @@
 			//cg_markerLayer = new cg_markerControl();
 			//cg_map.map.addControl( cg_markerLayer );
 		}
-	}
+	}*/
 
 })( jQuery );

@@ -168,13 +168,12 @@ var cg_markerControl = L.Control.extend({
  * ------------------------------------------------------------*/
 cg_map.init = function() {
     cg_map.map = L.map( 'map', {
-       //center: new L.LatLng( cg_user.home.lat, cg_user.home.lng ),
-        center: new L.LatLng( 48, 13),
-        zoom: 14,
+        center: new L.LatLng( cg_user.home.lat, cg_user.home.lng ),
+        zoom: 15,
         layers: []
     });
     L.tileLayer("http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png", { minZoom: 12, maxZoom: 18, detectRetina: true } ).addTo( cg_map.map );
-    //cg_map.setMarker();
+    cg_map.setMarker();
 }
 
 

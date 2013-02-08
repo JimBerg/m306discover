@@ -1,6 +1,30 @@
 <?php
-class Utilities
-{
+
+/** --------------------------------------------------------------------------
+ * base class for geolocation services
+ * distance calculations
+ * (in fact a simple class, not extending any controller would be enough)
+ * --------------------------------------------------------------------------  */
+class Location_Controller extends MY_Controller {
+
+    /** --------------------------------------------------------------------------
+     * constructor
+     * --------------------------------------------------------------------------  */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
+    /** --------------------------------------------------------------------------
+     * get current logged in user
+     * @return user object || void
+     * --------------------------------------------------------------------------  */
+    public function getUserLocation()
+    {
+
+    }
+
     /**
      * calculate radius in specific distance to a given point
      * @param array $point

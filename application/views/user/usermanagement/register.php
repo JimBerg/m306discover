@@ -28,14 +28,11 @@
         </div>
     </div>
 
-    <div class="control-group">
-        <div class="controls">
-            <label class="checkbox">
-                <input type="checkbox"> Remember me
-            </label>
-            <?php echo form_submit( 'submit', 'registrieren' ); ?>
-        </div>
-    </div>
+    <!-- PASSWORD CONFIRM -->
+
+    <input type="hidden" id="position-lat" name="position-lat" />
+    <input type="hidden" id="position-lng" name="position-lng" />
+    <?php echo form_submit( 'submit', 'registrieren' ); ?>
 
     <?php echo form_close(); ?>
 </div>
