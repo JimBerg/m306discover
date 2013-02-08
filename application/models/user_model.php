@@ -21,8 +21,26 @@ class User_Model extends MY_Model
         ),
         'password' => array(
             'field' => 'password',
-            'label' => 'Password',
+            'label' => 'Passwort',
             'rules' => 'trim|required'
+        )
+    );
+
+    public $register_rules = array(
+        'email' => array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'trim|required|valid_email|xss_clean'
+        ),
+        'password_register' => array(
+            'field' => 'password_register',
+            'label' => 'Passwort',
+            'rules' => 'trim|matches[password_register_confirm]'
+        ),
+        'password_register_confirm' => array(
+            'field' => 'password_confirm',
+            'label' => 'Passwort bestätigen',
+            'rules' => 'trim|matches[password_register]'
         )
     );
 

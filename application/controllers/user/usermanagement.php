@@ -84,25 +84,24 @@ class Usermanagement extends User_Controller
 
         if ( !empty( $_POST ) ) { //if something was submitted
 
-            $rules = $this->user_model->rules;
+            $email = $_POST[ 'email' ];
+            $username = $_POST[ 'username' ];
+
+            //get validation rules from model
+            $rules = $this->user_model->register_rules;
             $this->form_validation->set_rules( $rules );
 
             if( $this->form_validation->run() == true ) { //check if valid
-
-                $email = $_POST[ 'email' ];
-                $username = $_POST[ 'username' ];
-
-                if ( $this->user_model->getBy( array( 'username' => $username ) ) ) { //check if username || email already exists
+                if ( $this->user_model->getBy( array( 'username' => $username ) ) ) { //check if username already exists
                     $this->data[ 'error' ] = "Dieser Username existiert bereits. Versuch doch mal was einfallsreicheres.";
                     $this->load->view( 'user/_layout_modal', $this->data );
                     return;
-                } else if( $this->user_model->getBy( array( 'email' => $email ) ) ) {
+                } else if( $this->user_model->getBy( array( 'email' => $email ) ) ) { //check if email already exists
                     $this->data[ 'error' ] = "Diese Emailadresse ist bereits vorhanden. Seltsam, was?";
                     $this->load->view( 'user/_layout_modal', $this->data );
                     return;
                 } else {
-                    //register coords to location table (if not exists)
-                    $this->load->model( 'location_model' );
+                    $this->load->model( 'location_model' ); //load location model
                     $location = array(
                         'name' => 'My Homebase', //TODO: rename it or reverse geocoding? for real names?
                         'lat' => $_POST[ 'position-lat' ],
@@ -114,13 +113,19 @@ class Usermanagement extends User_Controller
                     $data = array(
                         'username' => $username,
                         'email' => $email,
-                        'password' => $_POST[ 'password' ],
+                        'password' => $_POST[ 'password_register' ],
                         'location_id' => $last_inserted_id
                     );
                     $this->user_model->save( $data, $id = null );
                     $this->user_model->login(); //set session
                     redirect( 'user/usermanagement' );
                 }
+            } else {
+                $this->data = array(
+                    'username' => $username,
+                    'email' => $email,
+                    'subview' => 'user/usermanagement/register'
+                );
             }
         }
         $this->load->view( 'user/_layout_modal', $this->data );
@@ -136,4 +141,5 @@ class Usermanagement extends User_Controller
         $this->data[ 'subview' ] = 'user/usermanagement/profile';
         $this->load->view( 'user/_layout_main', $this->data );
     }
+
 }

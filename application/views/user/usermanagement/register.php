@@ -6,29 +6,43 @@
     <?php echo validation_errors(); ?>
     <?php if ( isset( $error ) ) : ?><span><?php echo $error; ?></span><?php endif; ?>
 
-    <?php echo form_open('user/usermanagement/register', array('id' => 'register_form')); ?>
+    <?php echo form_open('user/usermanagement/register', array( 'id' => 'register_form' ) ); ?>
     <div class="control-group">
         <label class="control-label" for="email">Email</label>
         <div class="controls">
-            <?php echo form_input(array('name' => 'email', 'id' => 'email')); ?>
+            <?php echo form_input( array(
+                'name' => 'email',
+                'id' => 'email',
+                'value' => set_value( 'email', ( isset ( $email ) ? $email : '' ) )
+            ) ); ?>
         </div>
     </div>
-
     <div class="control-group">
         <label class="control-label" for="username">Username</label>
         <div class="controls">
-            <?php echo form_input(array('name' => 'username', 'id' => 'username')); ?>
+            <?php echo form_input( array(
+                'name' => 'username',
+                'id' => 'username',
+                'value' => set_value( 'username', ( isset ( $username ) ? $username : '' ) )
+            ) ); ?>
         </div>
     </div>
 
     <div class="control-group">
         <label class="control-label" for="password">Passwort</label>
         <div class="controls">
-            <?php echo form_password( 'password' ); ?>
+            <?php echo form_password( 'password_register' ); ?>
         </div>
     </div>
 
-    <!-- PASSWORD CONFIRM -->
+    <div class="control-group">
+        <label class="control-label" for="password">Passwort bestätigen</label>
+        <div class="controls">
+            <?php echo form_password( 'password_register_confirm' ); ?>
+        </div>
+    </div>
+
+    <p>Privacy Text.</p>
 
     <input type="hidden" id="position-lat" name="position-lat" />
     <input type="hidden" id="position-lng" name="position-lng" />
