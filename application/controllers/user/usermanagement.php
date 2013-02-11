@@ -12,9 +12,14 @@
 
 class Usermanagement extends User_Controller
 {
+    protected $userId;
+
     public function __construct()
     {
         parent::__construct();
+        //$this->userId = parent::getCurrentUser()->id;
+        $this->load->model( 'visits_model' );
+        $this->load->model( 'location_model' );
     }
 
 
@@ -25,8 +30,12 @@ class Usermanagement extends User_Controller
     public function index()
     {
         $this->data['user'] = parent::getCurrentUser();
+        $this->userId = parent::getCurrentUser()->id;
+        /* TODO: if not empty...  */
+        $this->data['visits'] = $this->getUserLatestTask();
+        $this->data['task'] = $this->getUserNextTask();
         $this->data['subview'] = 'user/usermanagement/index';
-        $this->load->view('user/_layout_main', $this->data);
+        $this->load->view( 'user/_layout_main', $this->data );
     }
 
     /**
@@ -35,6 +44,17 @@ class Usermanagement extends User_Controller
     public function modal()
     {
         $this->load->view('user/_layout_modal',$this->data);
+    }
+
+    /**
+     * renders template for user history
+     */
+    public function history()
+    {
+        $this->data['user'] = parent::getCurrentUser();
+        $this->data['history'] = $this->getUserHistory();
+        $this->data['subview'] = 'user/usermanagement/history';
+        $this->load->view( 'user/_layout_main', $this->data );
     }
 
     /** --------------------------------------------------------------------------
@@ -140,6 +160,39 @@ class Usermanagement extends User_Controller
         $this->data[ 'user' ] = parent::getCurrentUser();
         $this->data[ 'subview' ] = 'user/usermanagement/profile';
         $this->load->view( 'user/_layout_main', $this->data );
+    }
+
+    /**
+     * get all visited location
+     * @return mixed
+     */
+    protected function getUserHistory()
+    {
+        $visits = $this->visits_model->getBy( array( 'user_id' => $this->userId ) );
+        return $visits;
+    }
+
+    /**
+     * get latest visit
+     * @return mixed
+     */
+    protected function getUserLatestTask()
+    {
+        $visits = $this->visits_model->getBy( array( 'user_id' => $this->userId ), true );
+        return $visits;
+    }
+
+
+    /**
+     * get description of next visit
+     * @return mixed
+     */
+    protected function getUserNextTask()
+    {
+        $currentVisitId = $this->getUserLatestTask();
+        $nextVisitId = (int)$currentVisitId->id + 1; //TODO - check if exists!!
+        $nextTask = $this->location_model->getBy( array( 'id' => $nextVisitId ) );
+        return $nextTask;
     }
 
 }

@@ -1,4 +1,4 @@
-<div id="map" style="width: 400px; height: 400px;">
+<div id="map">
 
     <!-- ******** DIE FALLBACKLÖSUNG ************ |
     |                                             |
@@ -17,3 +17,28 @@
     | **** FOR OLD BROWSERS AND JS HATERS ***** -->
 
 </div>
+
+
+<div id="map-control">
+    <ul>
+        <li><span>Du bist hier: </span><span id="current-location"></span></li>
+        <li><span>Nächster Punkt: </span></li>
+    </ul>
+
+    <ul>
+        <li><span>Gelöste Aufgaben: </span></li>
+        <li><span>Punkte: </span></li>
+        <li><span>Level: </span></li>
+    </ul>
+
+</div>
+
+
+<?php //var_dump($visits); ?>
+<?php //var_dump($user); ?>
+<?php //var_dump($task); ?>
+
+
+<h3>Die nächste Aufgabe: </h3>
+<?php echo $task[0]->description; ?>
+

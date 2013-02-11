@@ -156,7 +156,7 @@ var cg_markerControl = L.Control.extend({
             event.stopPropagation();
         });
 
-        //$( container ).on( 'click', function() { markerControlPanelToggle.apply( domElem ); } );
+        $( container ).on( 'click', function() { markerControlPanelToggle.apply( domElem ); } );
 
         return container;
     }

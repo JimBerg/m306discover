@@ -9,8 +9,12 @@
 
     cg_game.init();
     var map = $( '#map' ) || false;
+    var checkIn = $( '#checkIn' ) || false;
+    var cg_markerLayer;
     if( map.length > 0 ) {
         cg_map.init();
+        cg_markerLayer = new cg_markerControl();
+        cg_map.map.addControl( cg_markerLayer );
     }
  	/*var online = navigator.onLine;
 	var map = $( '#map' ) || false;
