@@ -215,7 +215,7 @@ cg_map.getNextCheckPoint = function() {
     if ( request ) {
     console.log(request.responseText );
         data =  $.parseJSON( request.responseText );
-        return [ data[0].lat, data[0].lng ];
+        return [ data.lat, data.lng ];
     } else {
         return [ 0, 0 ] //false; TODO handle this somehow...
     }

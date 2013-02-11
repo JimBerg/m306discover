@@ -23,7 +23,7 @@ class Location_Model extends MY_Model
             $query = $this
                 ->db
                 ->where( 'type', $type )
-                ->where( 'poi', 1 )
+                //->where( 'poi', 1 )
                 ->get( 'location' );
 
             if ( $query->num_rows > 0 ) {
@@ -32,7 +32,7 @@ class Location_Model extends MY_Model
         } else {
             $query = $this
                 ->db
-                ->where( 'poi', 1 )
+                //->where( 'poi', 1 )
                 ->get( 'location' );
 
             if ( $query->num_rows > 0 ) {

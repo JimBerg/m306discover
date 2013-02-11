@@ -41,4 +41,3 @@
 
 
 <h3>Die nächste Aufgabe: </h3>
-<?php echo $task[0]->description; ?>

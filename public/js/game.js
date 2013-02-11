@@ -50,8 +50,7 @@ cg_game.init = function() {
 
 cg_game.getNextTask = function() {
 
-
-    console.log(test);
+alert("check in");
 
     // get current user
 

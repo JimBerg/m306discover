@@ -12,28 +12,29 @@
 
 class Usermanagement extends User_Controller
 {
-    protected $userId;
+    protected $user;
 
     public function __construct()
     {
         parent::__construct();
-        //$this->userId = parent::getCurrentUser()->id;
         $this->load->model( 'visits_model' );
         $this->load->model( 'location_model' );
+        $this->load->model( 'quests_model' );
     }
 
 
-    /** --------------------------------------------------------------------------
+    /**
      * default controller
      * renders start screen // main screen after login
-     * --------------------------------------------------------------------------  */
+     */
     public function index()
     {
-        $this->data['user'] = parent::getCurrentUser();
-        $this->userId = parent::getCurrentUser()->id;
+        $this->user = parent::getCurrentUser();
+        $this->data['user'] = $this->user;
+
         /* TODO: if not empty...  */
-        $this->data['visits'] = $this->getUserLatestTask();
-        $this->data['task'] = $this->getUserNextTask();
+        //$this->data['visits'] = $this->getUserLatestTask();
+        //$this->data['task'] = $this->getUserNextTask();
         $this->data['subview'] = 'user/usermanagement/index';
         $this->load->view( 'user/_layout_main', $this->data );
     }
@@ -57,11 +58,11 @@ class Usermanagement extends User_Controller
         $this->load->view( 'user/_layout_main', $this->data );
     }
 
-    /** --------------------------------------------------------------------------
+    /**
      * handles login
      * renders login form
      * set validation rules
-     * --------------------------------------------------------------------------  */
+     */
     public function login()
     {
         $this->user_model->loggedin() == false || redirect( 'user/usermanagement' ); //if session redirect
@@ -81,10 +82,10 @@ class Usermanagement extends User_Controller
     }
 
 
-    /** --------------------------------------------------------------------------
+    /**
      * handles logout
      * destroy session, redirect to login page
-     * --------------------------------------------------------------------------  */
+     */
     public function logout()
     {
         $this->user_model->logout();
@@ -92,12 +93,12 @@ class Usermanagement extends User_Controller
     }
 
 
-    /** --------------------------------------------------------------------------
+    /**
      * render register form
      * validation check
      * create new user - save records to database
      * start session & login
-     * --------------------------------------------------------------------------  */
+     */
     public function register()
     {
         $this->data[ 'subview' ] = 'user/usermanagement/register';
@@ -152,9 +153,9 @@ class Usermanagement extends User_Controller
     }
 
 
-    /** --------------------------------------------------------------------------
+    /**
      * edit user data
-     * --------------------------------------------------------------------------  */
+     */
     public function edit()
     {
         $this->data[ 'user' ] = parent::getCurrentUser();
@@ -168,7 +169,13 @@ class Usermanagement extends User_Controller
      */
     protected function getUserHistory()
     {
-        $visits = $this->visits_model->getBy( array( 'user_id' => $this->userId ) );
+        $this->user = parent::getCurrentUser();
+        $visits = $this->visits_model->getBy( array( 'user_id' =>  $this->user->id ) );
+        if( empty( $visits ) ) {
+            $visits = new stdClass();
+            $visits->visits = false;
+            $visits->text = "Noch keine Orte besucht.";
+        }
         return $visits;
     }
 
@@ -178,8 +185,8 @@ class Usermanagement extends User_Controller
      */
     protected function getUserLatestTask()
     {
-        $this->userId = parent::getCurrentUser()->id;
-        $visits = $this->visits_model->getBy( array( 'user_id' => $this->userId ), true );
+        $this->user = parent::getCurrentUser();
+        $visits = $this->visits_model->getBy( array( 'user_id' => $this->user->id ), true );
         return $visits;
     }
 
@@ -188,13 +195,19 @@ class Usermanagement extends User_Controller
      * get description of next visit
      * @return mixed
      */
-    protected function getUserNextTask()
+    public function getUserNextTask()
     {
-        $this->userId = parent::getCurrentUser()->id;
-        $currentVisitId = $this->getUserLatestTask();
+        $currentVisitId = $this->getUserLatestTask(); //TODO das ist etwas umständlich...
         $nextVisitId = (int)$currentVisitId->id + 1; //TODO - check if exists!!
-        $nextTask = $this->location_model->getBy( array( 'id' => $nextVisitId ) );
-        return $nextTask;
+        $nextTask = $this->quests_model->getBy( array( 'location_id' => $nextVisitId ), true );
+        $location = $this->location_model->getBy( array( 'id' => $nextVisitId ), true );
+
+        $task = new stdClass();
+        $task->quest = $nextTask->quest;
+        $task->name = $location->name; // hahahahah stupid to pass it ;)
+        $task->lat = $location->lat;
+        $task->lng = $location->lng;
+        return $task;
     }
 
     /**
@@ -212,7 +225,7 @@ class Usermanagement extends User_Controller
      * but i need it now to prevent from errors
      * @param $type which type should be selected
      * @return json obj location data
-     *------------------------------------------------------------*/
+     */
     public function getPOIs( $type = null )
     {
         $pois = $this->location_model->getPOIs( $type );
