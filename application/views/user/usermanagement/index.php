@@ -19,6 +19,7 @@
 </div>
 
 
+<h1><a href="#" onclick="javascript: cg_game.getNextTask()">click me</a></h1>
 <div id="map-control">
     <ul>
         <li><span>Du bist hier: </span><span id="current-location"></span></li>
@@ -41,4 +42,3 @@
 
 <h3>Die nächste Aufgabe: </h3>
 <?php echo $task[0]->description; ?>
-

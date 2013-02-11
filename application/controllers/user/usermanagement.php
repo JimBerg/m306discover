@@ -178,6 +178,7 @@ class Usermanagement extends User_Controller
      */
     protected function getUserLatestTask()
     {
+        $this->userId = parent::getCurrentUser()->id;
         $visits = $this->visits_model->getBy( array( 'user_id' => $this->userId ), true );
         return $visits;
     }
@@ -189,10 +190,33 @@ class Usermanagement extends User_Controller
      */
     protected function getUserNextTask()
     {
+        $this->userId = parent::getCurrentUser()->id;
         $currentVisitId = $this->getUserLatestTask();
         $nextVisitId = (int)$currentVisitId->id + 1; //TODO - check if exists!!
         $nextTask = $this->location_model->getBy( array( 'id' => $nextVisitId ) );
         return $nextTask;
+    }
+
+    /**
+     * set location on map => return json obj.
+     * @return json obj
+     */
+    public function getNextCheckPoint()
+    {
+        $checkPoint = $this->getUserNextTask();
+        echo json_encode( $checkPoint );
+    }
+
+    /**
+     * display all pois... <- we won't need it in this version
+     * but i need it now to prevent from errors
+     * @param $type which type should be selected
+     * @return json obj location data
+     *------------------------------------------------------------*/
+    public function getPOIs( $type = null )
+    {
+        $pois = $this->location_model->getPOIs( $type );
+        echo json_encode( $pois );
     }
 
 }

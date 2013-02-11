@@ -49,30 +49,34 @@ function layerToggle() {
     }
 }
 
+/* ------------------------------------------------------------*
+ * checkin
+ * ------------------------------------------------------------*/
 function setCheckIn() {
     cg_geolocation.observer(); // refresh, just to make sure
-    alert("check");
+   // alert("check");
+
     var data;
     var request = $.ajax({
-        url: 'http://lokal.horst/websites/mapgames/index.php/app/getPOIs/',
+        url: 'http://lokal.horst/websites/discover/public/user/usermanagement/getPOIs/',
         async: false
     });
 
     data =  $.parseJSON( request.responseText );
-
+console.log(data);
     for( var i = 0; i < data.length; i++ ) {
-
         /* was ein glück betrachten wir nur die lokale umgebung */
         if( cg_user.current.lat >= data[i].lat_south &&
             cg_user.current.lat <= data[i].lat_north &&
             cg_user.current.lng >= data[i].lng_west &&
             cg_user.current.lng <= data[i].lng_east ) {
 
+            console.log(data[i].name);
             // annnnnnd now write it to the database!!
-            $.ajax({
+           /* $.ajax({
                 url: 'http://lokal.horst/websites/mapgames/index.php/app/setCheckIn/'+data[i].id,
                 async: false
-            });
+            });*/
 
             //user frage freischalten
             //var task = data[i].task;
@@ -120,6 +124,7 @@ var cg_markerControl = L.Control.extend({
     },
 
     onAdd: function ( map ) {
+
         var container = L.DomUtil.create( 'div', 'cg-marker-control-layer' );
         var domElem = container;
 
@@ -199,15 +204,18 @@ cg_map.setMarker = function() {
  * get next checkpoint
  * ------------------------------------------------------------*/
 cg_map.getNextCheckPoint = function() {
+   // return;
     var data;
     var request = $.ajax({
-        url: 'http://lokal.horst/websites/mapgames/index.php/app/getNextCheckPoint/',
+        //url: 'http://lokal.horst/websites/mapgames/index.php/app/getNextCheckPoint/',
+        url: 'http://lokal.horst/websites/discover/public/user/usermanagement/getNextCheckPoint',
         async: false
     });
 
     if ( request ) {
+    console.log(request.responseText );
         data =  $.parseJSON( request.responseText );
-        return [ data.lat, data.lng ];
+        return [ data[0].lat, data[0].lng ];
     } else {
         return [ 0, 0 ] //false; TODO handle this somehow...
     }
@@ -226,7 +234,7 @@ cg_map.getMarkerCollection = function ( markerType ) {
     var marker = [];
 
     var request = $.ajax({
-        url: 'http://lokal.horst/websites/mapgames/index.php/app/getPOIs/'+markerType,
+        url: 'http://lokal.horst/websites/discover/public/user/usermanagement/getPOIs/'+markerType,
         async: false
     });
 

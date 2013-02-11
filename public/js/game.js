@@ -18,6 +18,8 @@ var cg_geolocation = {};
  * ------------------------------------------------------------*/
 cg_game.init = function() {
     if ( window.localStorage.getItem( 'location-home-lat' ) && window.localStorage.getItem( 'location-home-lng' ) ) {
+        cg_geolocation.observer(); //observe position - detect changes
+
         cg_user.home = {
             'lat': window.localStorage.getItem( 'location-home-lat' ),
             'lng': window.localStorage.getItem( 'location-home-lng' )
@@ -35,6 +37,9 @@ cg_game.init = function() {
     }
 
     //TODO: SET THIS ONLY ON REGISTRATION // REGISTRATION FORM
+    /* only used for registration but we may not load it in first init process
+    maybe user cancel registration or there's an input error...
+     */
     var lat = window.localStorage.getItem( 'location-home-lat' );
     var lng = window.localStorage.getItem( 'location-home-lng' );
     // set hidden fields for storing to database
@@ -44,6 +49,10 @@ cg_game.init = function() {
 
 
 cg_game.getNextTask = function() {
+
+
+    console.log(test);
+
     // get current user
 
     // get his latest task -> resp. next task from db settings
@@ -70,11 +79,10 @@ cg_geolocation.onsuccess = function( position ) {
 
         localStorage.setItem( 'location-current-lat', lat );
         localStorage.setItem( 'location-current-lng', lng );
-    } else if( window.localStorage.getItem( 'location-current-lat' ) != lat || window.localStorage.getItem( 'location-current-lng' ) != lng ) {
+    } else if( window.localStorage.getItem( 'location-current-lat' ) != lat || window.localStorage.getItem( 'location-current-lng' ) != lng ) { //umkreis vernachlässigbar in diesem fall
         localStorage.setItem( 'location-current-lat', lat );
         localStorage.setItem( 'location-current-lng', lng );
     }
-
 
 }
 

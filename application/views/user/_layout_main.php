@@ -6,7 +6,7 @@
         <li><?php echo anchor('user/usermanagement/edit', 'Profil'); ?></li>
         <li><?php echo anchor('user/usermanagement/history', 'Verlauf'); ?></li>
     </ul>
-    <h6>Willkommen <?php echo $user->username; ?></h6>
+    <h3>Willkommen <?php echo $user->username; ?></h3>
     <?php echo anchor('user/usermanagement/logout', '<i class="icon-off"></i> logout'); ?>
 </div>
 
