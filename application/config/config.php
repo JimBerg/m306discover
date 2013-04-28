@@ -2,16 +2,16 @@
 
 /** --------------------------------------------------------------------------
  * autoload controllers that are not extending standard CI_Controllers
- * in our case User_Controller, Frontend_Controller & Utilities
  * --------------------------------------------------------------------------  */
- function __autoload($classname) { 
-	if (strpos($classname, 'CI_') !== 0) { //wenn CI_ nicht vorkommt
-		$file = APPPATH . 'libraries/' . $classname . '.php'; //in application pfad ->... nach controllern suchen
-		if (file_exists($file) && is_file($file)) {
-			@include_once($file);
-		}
-	}
+function __autoload( $classname ) {
+    if ( strpos( $classname, 'CI_') !== 0 ) { //if there's no CI_ in pathname == no ci standard class
+        $file = APPPATH . 'controllers/' . $classname . '.php'; // search in given path
+        if (file_exists( $file ) && is_file( $file )) {
+            @include_once( $file );
+        }
+    }
 }
+
 
 
 /*
@@ -28,7 +28,16 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://lokal.horst/websites/discover/public';
+
+/*if( ENVIRONMENT == 'development' || ENVIRONMENT == 'developmentJ') {
+    $config['base_url']	= 'discover.dev';
+} else if( ENVIRONMENT == 'developmentC' ) {
+    $config['base_url']	= '';
+} else if( ENVIRONMENT == 'production' ) {
+    $config['base_url']	= 'http://ignisfatuus.jimberg.de/';
+}*/
+$config['base_url']	= 'http://discover.dev';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +129,7 @@ $config['enable_hooks'] = FALSE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'Jay_';
 
 
 /*
@@ -260,9 +269,9 @@ $config['encryption_key'] = 'wLo1MbsyVM10df90DZ3d2a54p0703lzS';
 */
 $config['sess_cookie_name']		= 'ci_session';
 $config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= TRUE;
-$config['sess_encrypt_cookie']	= TRUE;
-$config['sess_use_database']	= TRUE;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_use_database']	= FALSE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;

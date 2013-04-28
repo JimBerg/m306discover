@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 1);
 date_default_timezone_set('Europe/Zurich');
 /*
  *---------------------------------------------------------------
@@ -20,8 +22,11 @@ date_default_timezone_set('Europe/Zurich');
  */
 	switch (dirname(__FILE__)) { //root
 		case '/Workspace/websites/discover/public':
-			define('ENVIRONMENT', 'development');
-		break;
+            define('ENVIRONMENT', 'developmentJ');
+        break;
+        /*case '/your/path/here':
+            define('ENVIRONMENT', 'developmentC');
+            break;*/
 		default:
 			define('ENVIRONMENT', 'production');
 		break;
@@ -39,7 +44,8 @@ if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
 	{
-		case 'development':
+		case 'developmentJ':
+        case 'developmentC':
 			error_reporting(E_ALL | E_STRICT);
 		break;
 	

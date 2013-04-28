@@ -1,27 +1,33 @@
 <?php
-class Page extends Frontend_Controller
+/**
+ * class Page
+ * extends Jay_Controller
+ *
+ * renders static start pages of application
+ *
+ * @author Janina Imberg
+ * @version 1.0
+ * @date
+ *
+ */
+
+
+class Page extends CI_Controller
 {
-    /**
-     * initialize page model
-     */
+
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('page_model'); // entsprechendes model laden
     }
 
     /**
-     * loads start page of application
-     * => default action
-     * => visible for guests & registered users
+     * default action index
+     * renders static start page of application
+     * @return void
      */
     public function index()
     {
-        $this->load->view('frontend/_layout_start');
-        /* $pages = $this->page_model->get();
-        $pages = $this->page_model->getBy(array('slug' => 'beitrag'));
-        var_dump($pages);*/
+        $this->load->view( 'page/_layout_start' );
     }
-
-
 }
+

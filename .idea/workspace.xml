@@ -2,19 +2,127 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba803f1b-c45a-4326-a271-dac5fe6b629c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/quests_model.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/controllers/user/visits.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodel/erm.mwb.bak" afterPath="$PROJECT_DIR$/dbmodel/erm.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodel/erm.mwb" afterPath="$PROJECT_DIR$/dbmodel/erm.mwb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/AvenirLTStd-Light.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/AvenirLTStd-Light.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/AvenirLTStd-Light.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/AvenirLTStd-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/AvenirLTStd-Light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/arrow_open_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/arrow_open_sml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/arrow_solved_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/arrow_solved_sml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_logout_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_logout_sml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_open_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_open_sml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_solved_big.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icon_solved_sml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/marker_icon_current.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/marker_icon_solved.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/config/developmentC/database.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/game.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/helper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/core/Jay_Controller.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/core/Jay_Model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/history_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/profile_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/page/_layout_start.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/history.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/map.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/profile.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/content/register.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/layout/_footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/layout/_header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/layout/_layout_main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/user/layout/_layout_modal.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/config/development/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/controllers/user/migration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/controllers/user/socialconnect.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/controllers/user/usermanagement.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/core/MY_Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/core/MY_Model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/Frontend_Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/Location_Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/User_Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/base_facebook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/facebook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/migrations/001_create_users.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/migrations/002_create_pages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/migrations/003_sessions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/models/page_model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/models/visits_model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/frontend/_layout_start.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/_layout_main.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/_layout_modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/components/page_foot.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/components/page_head.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/history.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/profile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbmodel/discover_structure.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbmodel/erm.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbmodel/erm.mwb.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/images/layers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/images/marker-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/images/marker-shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/images/zoom-in.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/images/zoom-out.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/leaflet-src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/leaflet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/leaflet.ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/dist/leaflet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/jquery-1.8.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/license.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user/usermanagement.php" afterPath="$PROJECT_DIR$/application/controllers/user/usermanagement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/.htaccess" afterPath="$PROJECT_DIR$/application/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/constants.php" afterPath="$PROJECT_DIR$/application/config/constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/doctypes.php" afterPath="$PROJECT_DIR$/application/config/doctypes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/foreign_chars.php" afterPath="$PROJECT_DIR$/application/config/foreign_chars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/hooks.php" afterPath="$PROJECT_DIR$/application/config/hooks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/index.html" afterPath="$PROJECT_DIR$/application/config/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/migration.php" afterPath="$PROJECT_DIR$/application/config/migration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/mimes.php" afterPath="$PROJECT_DIR$/application/config/mimes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/production/database.php" afterPath="$PROJECT_DIR$/application/config/production/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/profiler.php" afterPath="$PROJECT_DIR$/application/config/profiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/smileys.php" afterPath="$PROJECT_DIR$/application/config/smileys.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/user_agents.php" afterPath="$PROJECT_DIR$/application/config/user_agents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.html" afterPath="$PROJECT_DIR$/application/controllers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/page.php" afterPath="$PROJECT_DIR$/application/controllers/page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/index.html" afterPath="$PROJECT_DIR$/application/core/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/errors/error_404.php" afterPath="$PROJECT_DIR$/application/errors/error_404.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/errors/error_db.php" afterPath="$PROJECT_DIR$/application/errors/error_db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/errors/error_general.php" afterPath="$PROJECT_DIR$/application/errors/error_general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/errors/error_php.php" afterPath="$PROJECT_DIR$/application/errors/error_php.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/errors/index.html" afterPath="$PROJECT_DIR$/application/errors/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/helpers/index.html" afterPath="$PROJECT_DIR$/application/helpers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/hooks/index.html" afterPath="$PROJECT_DIR$/application/hooks/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index.html" afterPath="$PROJECT_DIR$/application/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/index.html" afterPath="$PROJECT_DIR$/application/language/english/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/index.html" afterPath="$PROJECT_DIR$/application/libraries/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/index.html" afterPath="$PROJECT_DIR$/application/models/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/location_model.php" afterPath="$PROJECT_DIR$/application/models/location_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/_layout_main.php" afterPath="$PROJECT_DIR$/application/views/user/_layout_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/usermanagement/index.php" afterPath="$PROJECT_DIR$/application/views/user/usermanagement/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbmodel/discover_structure.sql" afterPath="$PROJECT_DIR$/dbmodel/discover_structure.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/quests_model.php" afterPath="$PROJECT_DIR$/application/models/quests_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/third_party/index.html" afterPath="$PROJECT_DIR$/application/third_party/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index.html" afterPath="$PROJECT_DIR$/application/views/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/game.js" afterPath="$PROJECT_DIR$/public/js/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/map.js" afterPath="$PROJECT_DIR$/public/js/map.js" />
     </list>
     <ignored path="discover.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,96 +142,68 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="343" column="40" selection-start="10769" selection-end="10769" vertical-scroll-proportion="-8.24">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="241" column="36" selection-start="6572" selection-end="6572" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/content/map.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="6" selection-start="1302" selection-end="1302" vertical-scroll-proportion="-21.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/game.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="1" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.8932384">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="7" selection-start="3331" selection-end="3331" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="0" selection-start="2158" selection-end="2158" vertical-scroll-proportion="0.0">
+            <state line="562" column="1" selection-start="10204" selection-end="10204" vertical-scroll-proportion="-24.26923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_head.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/components/page_head.php">
+      <file leaf-file-name="profile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/content/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="277" selection-end="277" vertical-scroll-proportion="-5.12">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="31" selection-start="7266" selection-end="7266" vertical-scroll-proportion="-106.46154">
+            <state line="0" column="0" selection-start="0" selection-end="152" vertical-scroll-proportion="-0.0">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#6#149#0" expanded="true" />
+                <marker date="1367142985000" expanded="true" signature="2238:2279" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="18" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.5094067">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usermanagement.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/user/usermanagement.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="20" selection-start="6403" selection-end="6403" vertical-scroll-proportion="-12.54902">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/usermanagement/history.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="17" selection-start="17" selection-end="23" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_controller.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/libraries/user_controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="23" selection-start="1791" selection-end="1791" vertical-scroll-proportion="-17.28">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_layout_main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/_layout_main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="31" selection-start="403" selection-end="403" vertical-scroll-proportion="-5.76">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quests_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/quests_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="1" selection-start="523" selection-end="523" vertical-scroll-proportion="-13.44">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/usermanagement/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="692" selection-end="692" vertical-scroll-proportion="-6.28">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -141,21 +221,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/user/usermanagement/profile.php" />
-        <option value="$PROJECT_DIR$/application/models/visists_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user/visits.php" />
-        <option value="$PROJECT_DIR$/application/libraries/user_controller.php" />
-        <option value="$PROJECT_DIR$/application/models/visits_model.php" />
-        <option value="$PROJECT_DIR$/application/views/user/usermanagement/history.php" />
-        <option value="$PROJECT_DIR$/application/views/user/components/page_head.php" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/application/views/user/usermanagement/index.php" />
-        <option value="$PROJECT_DIR$/application/models/location_model.php" />
-        <option value="$PROJECT_DIR$/application/views/user/_layout_main.php" />
-        <option value="$PROJECT_DIR$/application/models/quests_model.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/public/js/map.js" />
-        <option value="$PROJECT_DIR$/application/controllers/user/usermanagement.php" />
+        <option value="$PROJECT_DIR$/application/views/user/layout/_footer.php" />
+        <option value="$PROJECT_DIR$/application/core/Jay_Controller.php" />
+        <option value="$PROJECT_DIR$/application/models/profile_model.php" />
+        <option value="$PROJECT_DIR$/application/views/user/layout/_header.php" />
+        <option value="$PROJECT_DIR$/application/views/user/content/history.php" />
+        <option value="$PROJECT_DIR$/application/controllers/helper.php" />
+        <option value="$PROJECT_DIR$/application/views/user/content/index.php" />
+        <option value="$PROJECT_DIR$/application/views/user/content/profile.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
+        <option value="$PROJECT_DIR$/application/controllers/game.php" />
+        <option value="$PROJECT_DIR$/application/views/user/content/map.php" />
+        <option value="$PROJECT_DIR$/application/views/user/layout/_layout_main.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/js/game.js" />
       </list>
     </option>
@@ -171,10 +251,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="97" />
     <option name="y" value="22" />
-    <option name="width" value="1368" />
-    <option name="height" value="874" />
+    <option name="width" value="1791" />
+    <option name="height" value="1015" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -266,6 +346,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -323,30 +461,8 @@
               <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usermanagement" />
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,7 +488,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,7 +510,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
+              <option name="myItemId" value="page" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,24 +529,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,28 +582,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="discover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -528,7 +604,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="development" />
+              <option name="myItemId" value="production" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="developmentJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="developmentC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cache" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,6 +678,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -561,13 +700,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/libraries" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/application/views/components" />
-      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/application/models/Entity" />
+      <recent name="$PROJECT_DIR$/application/libraries" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/views/admin" />
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/application/views/user/layout" />
+      <recent name="$PROJECT_DIR$/application/config/developmentJ" />
+      <recent name="$PROJECT_DIR$/application/config/production" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.usermanagement.php">
@@ -579,6 +723,13 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -650,20 +801,42 @@
       <created>1360612325558</created>
       <updated>1360612325558</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="db structure modified">
+      <created>1360626898892</created>
+      <updated>1360626898892</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="22" width="1368" height="874" extended-state="0" />
+    <frame x="97" y="22" width="1791" height="1015" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440243" sideWeight="0.08632138" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440243" sideWeight="0.90438247" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15243553" sideWeight="0.29753914" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15243553" sideWeight="0.69463086" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -672,6 +845,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -712,7 +887,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="small url fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="db structure modified" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -732,6 +907,7 @@
     <MESSAGE value="set home marker - add location model" />
     <MESSAGE value="include some js from old version" />
     <MESSAGE value="small url fixes" />
+    <MESSAGE value="db structure modified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,119 +915,112 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+    <entry file="file://$PROJECT_DIR$/application/core/Jay_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0328639">
+        <state line="28" column="4" selection-start="498" selection-end="529" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/usermanagement/register.php">
+    <entry file="file://$PROJECT_DIR$/application/models/profile_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="24" selection-start="1527" selection-end="1552" vertical-scroll-proportion="0.7370892">
-          <folding />
-        </state>
+        <state line="14" column="1" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="5" selection-start="964" selection-end="964" vertical-scroll-proportion="86.4">
+        <state line="12" column="1" selection-start="644" selection-end="644" vertical-scroll-proportion="0.21276596" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/layout/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="374" selection-end="374" vertical-scroll-proportion="0.17201835" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/content/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="15" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+    <entry file="file://$PROJECT_DIR$/application/views/user/content/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0">
+        <state line="11" column="10" selection-start="385" selection-end="385" vertical-scroll-proportion="0.19572954">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/user/content/history.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.89543444">
+        <state line="6" column="16" selection-start="108" selection-end="108" vertical-scroll-proportion="0.10676157">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/location_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/user/layout/_layout_main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="34" selection-start="450" selection-end="450" vertical-scroll-proportion="0.29307806">
+        <state line="21" column="52" selection-start="507" selection-end="507" vertical-scroll-proportion="0.37366548">
+          <folding>
+            <element signature="e#6#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="343" column="40" selection-start="10769" selection-end="10769" vertical-scroll-proportion="-8.24">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/usermanagement/index.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="692" selection-end="692" vertical-scroll-proportion="-6.28">
+        <state line="113" column="7" selection-start="3331" selection-end="3331" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/content/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="152" vertical-scroll-proportion="-0.0">
+          <folding>
+            <element signature="e#6#149#0" expanded="true" />
+            <marker date="1367142985000" expanded="true" signature="2238:2279" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/content/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="6" selection-start="1302" selection-end="1302" vertical-scroll-proportion="-21.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="36" selection-start="6572" selection-end="6572" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="0" selection-start="2158" selection-end="2158" vertical-scroll-proportion="0.0">
+        <state line="562" column="1" selection-start="10204" selection-end="10204" vertical-scroll-proportion="-24.26923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/components/page_head.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="277" selection-end="277" vertical-scroll-proportion="-5.12">
+        <state line="105" column="1" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.8932384">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/quests_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="523" selection-end="523" vertical-scroll-proportion="-13.44">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/_layout_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="31" selection-start="403" selection-end="403" vertical-scroll-proportion="-5.76">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/user_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="23" selection-start="1791" selection-end="1791" vertical-scroll-proportion="-17.28">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/usermanagement/history.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="17" selection-start="17" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user/usermanagement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="20" selection-start="6403" selection-end="6403" vertical-scroll-proportion="-12.54902">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="31" selection-start="7266" selection-end="7266" vertical-scroll-proportion="-106.46154">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="18" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.5094067">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

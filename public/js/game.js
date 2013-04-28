@@ -1,98 +1,162 @@
-/* ------------------------------------------------------------*
- *
- * create game and user object
- * - set methods and properties
- *
- * ------------------------------------------------------------*/
-var cg_game = {};
-var cg_user = {};
-var cg_geolocation = {};
+/**
+* map.js
+*
+* set up map, markers, layers,
+* add elements to map,
+* handles map interactions
+*
+* @author Janina Imberg
+* @version 1.0
+* @date 25.04.2013
+*
+*/
 
+/**
+ * div container that holds map
+ * @type {*|HTMLElement|Boolean}
+ */
+var mapContainer = $( '#map' ) || false;
 
-/* ------------------------------------------------------------*
- * runs everytime the app is loaded
- *
- * 1. check if there's already a location in local storage
- * 2. else check if geoloction is supported and set local storage
- *
- * ------------------------------------------------------------*/
-cg_game.init = function() {
-    if ( window.localStorage.getItem( 'location-home-lat' ) && window.localStorage.getItem( 'location-home-lng' ) ) {
-        cg_geolocation.observer(); //observe position - detect changes
+ /**
+ * get base url of application
+ * @type {*|jQuery}
+ */
+var baseUrl = $( '#base-url' ).data( 'base-url' );
 
-        cg_user.home = {
-            'lat': window.localStorage.getItem( 'location-home-lat' ),
-            'lng': window.localStorage.getItem( 'location-home-lng' )
+/**
+ * fetch overlay from dom and cache it for
+ * case of best practices ;)
+ * @type {Object}
+ */
+var overlay = $( '#overlay' );
+
+/**
+ * create map object and it to jayMap namespace
+ * {map was used to often in this context and may lead easily to a desaster...}
+ * - set map specific options
+ * - add custom marker and layer
+ * - set options for icon size and images
+ *
+ * requires: leaflet.js
+ */
+var jayMap = {
+    'currentIcon': L.icon({
+        iconUrl: '/images/marker_icon_current.png',
+        iconSize:     [20, 26], // size of the icon
+        iconAnchor:   [10, 13], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+    }),
+    'taskIconsComplete': L.icon({
+        iconUrl: '/images/marker_icon_solved.png',
+        iconSize:     [20, 26], // size of the icon
+        iconAnchor:   [10, 13], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+    })
+};
+
+/**
+ * init map / load map
+ * add map to dom
+ * set map extract for current view
+ * set zoom and map center
+ *
+ * @return void
+ */
+jayMap.init = function() {
+    this.map = L.map( 'map',
+        {
+            center: new L.LatLng( game.currentLat, game.currentLng ),
+            zoom: 15,
+            layers: []
         }
-        cg_user.current = {
-            'lat': window.localStorage.getItem( 'location-current-lat' ),
-            'lng': window.localStorage.getItem( 'location-current-lng' )
+    );
+    L.tileLayer(
+        "http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/999/256/{z}/{x}/{y}.png",
+        {
+            minZoom: 12,
+            maxZoom: 18,
+            detectRetina: true
+        }
+    ).addTo( this.map );
+   this.setCurrentMarker();
+};
+
+/**
+ * set marker options for style and position of current position
+ * bind marker to map object
+ *
+ * @return void
+ */
+jayMap.setCurrentMarker = function() {
+    this.currentMarker = L.marker( [ game.currentLat, game.currentLng ], { icon: this.currentIcon } );
+    this.currentMarker.addTo( this.map );
+    this.currentMarker.bindPopup( "<p>Aktuelle Position</p>" );
+};
+
+
+
+/**
+ * create game object / game namespace
+ * set default lat/lng values to 0/0
+ * handles map interactions
+ * get locations from database
+ * handles ajax requests
+ */
+var game = {
+    'currentLat': 0,
+    'currentLng': 0
+};
+
+/**
+ * init function
+ * calls geoloction function
+ * get coordinates of current position
+ * set game properties of current lat/lng value pair
+ * init map if location and mapcontainer were found
+ *
+ * @return void
+ */
+game.init = function() {
+    if ( navigator.geolocation ) {
+        navigator.geolocation.getCurrentPosition( game.onsuccess, game.onerror, { enableHighAccuracy: true } );
+        game.currentLat = window.localStorage.getItem( 'location-current-lat' );
+        game.currentLng = window.localStorage.getItem( 'location-current-lng' );
+        if( game.currentLat != 0 && game.currentLng != 0 ) {
+            if( mapContainer.length > 0 ) {
+                jayMap.init();
+            }
+        } else {
+            //TODO: error
         }
     } else {
-        if ( navigator.geolocation ) {
-            navigator.geolocation.getCurrentPosition( cg_geolocation.onsuccess, cg_geolocation.onerror, { enableHighAccuracy: true } );
-        } else {
-            $( '#map' ).text( "Einleitung nicht gelesen? Alter Browser heisst wirklich: Du spielst nicht mit!" );
-        }
+        //TODO: without geolocation you can't play -> set appropriate message
     }
+};
 
-    //TODO: SET THIS ONLY ON REGISTRATION // REGISTRATION FORM
-    /* only used for registration but we may not load it in first init process
-    maybe user cancel registration or there's an input error...
-     */
-    var lat = window.localStorage.getItem( 'location-home-lat' );
-    var lng = window.localStorage.getItem( 'location-home-lng' );
-    // set hidden fields for storing to database
-    $( 'input#position-lat' ).val( lat );
-    $( 'input#position-lng' ).val( lng );
-}
-
-
-cg_game.getNextTask = function() {
-
-alert("check in");
-
-    // get current user
-
-    // get his latest task -> resp. next task from db settings
-
-
-}
-
-
-
-/* ------------------------------------------------------------*
+/**
+ * callback function, if geolocation was successful
+ * save lat/lng value pair to local storage
  *
- * try to get position, set local storage items for starting p.
- * set hidden values to save location tob db
- *
- * ------------------------------------------------------------*/
-cg_geolocation.onsuccess = function( position ) {
+ * @param position
+ * @return void
+ */
+game.onsuccess = function( position ) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
 
-    // only on first visit
-    if( !window.localStorage.getItem( 'location-home-lat' ) ) {
-        localStorage.setItem( 'location-home-lat', lat );
-        localStorage.setItem( 'location-home-lng', lng );
-
-        localStorage.setItem( 'location-current-lat', lat );
-        localStorage.setItem( 'location-current-lng', lng );
-    } else if( window.localStorage.getItem( 'location-current-lat' ) != lat || window.localStorage.getItem( 'location-current-lng' ) != lng ) { //umkreis vernachlässigbar in diesem fall
+    if( window.localStorage.getItem( 'location-current-lat' ) != lat || window.localStorage.getItem( 'location-current-lng' ) != lng ) {
         localStorage.setItem( 'location-current-lat', lat );
         localStorage.setItem( 'location-current-lng', lng );
     }
+};
 
-}
-
-
-/* ------------------------------------------------------------*
+/**
+ * callback function if geolocation failed for some reason
  *
- * handle geolocation errors
- * TODO: something WITH the error messages
- *
- * ------------------------------------------------------------*/
-cg_geolocation.onerror = function( error ) {
+ * @param error
+ * @return string error message
+ */
+game.onerror = function( error ) {
     var message;
     switch ( error.code ) {
         case 0:
@@ -109,22 +173,99 @@ cg_geolocation.onerror = function( error ) {
             break;
     }
     return message;
-}
+};
+
+/**
+ * geolocation observer object,
+ * checks if current position has changed and refresh position on demand
+ *
+ * @return void
+ */
+game.observer = function() {
+    navigator.geolocation.watchPosition( game.onsuccess, game.onerror, { enableHighAccuracy: true } );
+};
+
+/**
+ * get users open quest
+ * call controller action get next quest
+ * get json object which contains quest description
+ * if all quests were solved an appropriate message will be returned instead
+ *
+ * @return void
+ */
+game.getCurrentQuest = function() {
+    $.ajax({
+        type: 'GET',
+        url: baseUrl+'game/getCurrentQuest',
+        success: function( response ) {
+            console.log( response );
+        },
+        dataType: 'json'
+    });
+};
+
+/**
+ * check in at current position
+ * refresh current position, to make sure
+ * call controller/action to compare current position with
+ * current tasks lat/lng circuit values (borders south, north, east, west)
+ * comparison is handled on server side
+ *
+ * @return String message
+ */
+game.setCheckIn = function( event ) {
+    alert("checkin");
+    game.observer();
+    $.ajax({
+        type: 'GET',
+        data: { 'lat': game.currentLat, 'lng': game.currentLng },
+        url: baseUrl+'game/setCheckIn',
+        success: function( response ) {
+            console.log( response.text );
+        },
+        dataType: 'json'
+    });
+    event.preventDefault();
+};
+
+/**
+ * confirm check in
+ */
+$( '#check-in' ).on( 'click', function() {
+    overlay.fadeIn( '500', 'linear' );
+    $( '<div id="confirm-check-in" class="dialog"/>')
+        .html(
+            '<div class="close button-close">X</div>' +
+            '<h1>Ganz sicher?</h1>' +
+            '<h2>Es gibt kein zurück.</h2>' +
+            '<a onclick="game.setCheckIn()">Sicher!</a>' +
+            '<a class="close dismiss">Doch nicht...</a>'
+        )
+        .appendTo( $( '#header' ) );
+
+     // attach event handler to close buttons
+    $( '.close' ).each( function( index ) {
+        $( this ).on( 'click', function() {
+            $( '.dialog' ).remove();
+            overlay.fadeOut();
+        });
+    });
+});
 
 
-/* ------------------------------------------------------------*
- * watch current location and refresh if neccessary
- * ------------------------------------------------------------*/
-cg_geolocation.observer = function() {
-    navigator.geolocation.watchPosition( cg_geolocation.onsuccess, cg_geolocation.onerror, { enableHighAccuracy: true } );
-}
+/**
+ * profile delete was clicked - set message first
+ * if message was confirmed redirect to delete
+ *
+ * @return void
+ */
+$( '#profile-delete' ).on( 'click', function() {
+    //TODO DELETE
+    alert("really?");
+});
 
 
-
-
-
-
-
-
-
-
+/**
+ * call init function, to get things started ;)
+ */
+game.init();
