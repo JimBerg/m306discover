@@ -57,6 +57,23 @@ class Game extends User {
     }
 
     /**
+     * load location objects for each visited location
+     *
+     * @return stdClass / json $visited locations
+     */
+    public function getVisitedLocations()
+    {
+        $markerCollection = array();
+        $history = parent::getUserHistory();
+        foreach( $history as $item ) {
+            $location = $this->location_model->getBy( array( 'id' =>  $item->location_id ) );
+            array_push( $markerCollection, $location );
+        }
+        echo json_encode( $markerCollection );
+    }
+
+
+    /**
      * handles ajax request
      * get lat and lng values of current pos
      * compare with current task

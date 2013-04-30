@@ -79,6 +79,7 @@ jayMap.init = function() {
         }
     ).addTo( this.map );
    this.setCurrentMarker();
+   this.setMarkers();
 };
 
 /**
@@ -93,7 +94,38 @@ jayMap.setCurrentMarker = function() {
     this.currentMarker.bindPopup( "<p>Aktuelle Position</p>" );
 };
 
+/**
+ * get visited locations from database
+ *
+ * @param callback
+ */
+jayMap.getVisitedLocations = function( callback ) {
+    $.ajax({
+        type: 'GET',
+        url: baseUrl+'game/getVisitedLocations',
+        success: function( response ) {
+            callback( response );
+        },
+        dataType: 'json'
+    });
+};
 
+/**
+ * create marker objects from given points
+ *
+ * @return object markerLayer
+ */
+jayMap.setMarkers = function() {
+    jayMap.getVisitedLocations( function( data ) {
+        var marker = [];
+        for( var i = 0; i < data.length; i++ ) {
+            marker[i] = L.marker( [ data[i][0].lat, data[i][0].lng ], { icon: jayMap.taskIconsComplete } );
+            marker[i].bindPopup( "<h3 class='marker-tooltip-title'>"+data[i][0].name+"</h3>" );
+            marker[i].addTo( jayMap.map );
+        }
+        //return layer = L.layerGroup( marker );
+    });
+};
 
 /**
  * create game object / game namespace
@@ -203,6 +235,7 @@ game.getCurrentQuest = function() {
         dataType: 'json'
     });
 };
+
 
 /**
  * check in at current position

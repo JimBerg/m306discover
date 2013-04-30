@@ -113,6 +113,8 @@ class User extends Jay_Controller {
             $rules = $this->user_model->register_rules;
             $this->form_validation->set_rules( $rules );
 
+            //TODO SET MESSAGES
+
             if( $this->form_validation->run() == true ) { //check if valid
                 if ( $this->user_model->getBy( array( 'username' => $username ) ) ) { //check if username exists
                     $this->data[ 'error' ] = "Dieser Username existiert bereits. Versuch doch mal was einfallsreicheres.";
@@ -120,10 +122,11 @@ class User extends Jay_Controller {
                     return;
                 }  else {
                     $data = array(
+                        'id' => '',
                         'username' => $username,
                         'password' => $_POST[ 'password_register' ],
                     );
-                    $this->user_model->save( $data, $id = null );
+                    $this->user_model->save( $data );
 
                     //set default data for related tables
                     $last_inserted_user_id = $this->db->insert_id();
@@ -134,14 +137,14 @@ class User extends Jay_Controller {
                         'avatar' => '',
                         'points' => 0,
                         'rank' => 'Ahnungsloser Neuling',
-                        'gameover' => 'false'
+                        'gameover' => 0
                     );
                     $this->profile_model->save( $profile );
 
                     //set first history object for user
                     $data = array(
                         'location_id' => 1,
-                        'user_id' => $this->user->id,
+                        'user_id' => $last_inserted_user_id,
                         'points' => 50,
                         'counter' => 0,
                         'solved' => 0

@@ -426,7 +426,7 @@ ul#main-navigation li.active a {
 * Profile page
 * ----------------------------------------------------------*/
 .container.profile {
-    width: 275px;
+    width: 270px;
     margin: 0 0 20px 25px;
     float: left;
 }

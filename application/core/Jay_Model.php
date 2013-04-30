@@ -117,8 +117,8 @@ class Jay_Model extends CI_Model
         }
 
         // insert - if no id exists
-        if ($id === null) {
-            !isset($data[$this->_primary_key]) || $data[$this->_primary_key] = null;
+        if ($id == null) {
+            //!isset($data[$this->_primary_key]) || $data[$this->_primary_key] = null;
             $this->db->set( $data ); // $data has to be passed as array
             $this->db->insert( $this->_table_name );
             $id = $this->db->insert_id();
