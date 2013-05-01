@@ -84,7 +84,7 @@ class Game extends User {
      */
     public function setCheckIn()
     {
-       if( $this->input->is_ajax_request() ) {
+      // if( $this->input->is_ajax_request() ) {
            $lat = $this->input->get( 'lat' );
            $lng = $this->input->get( 'lng' );
 
@@ -110,12 +110,12 @@ class Game extends User {
                $message->head = "Schade.";
                $message->text = "Das war nicht der gesuchte Ort.";
            }
-       } else {
+     /*  } else {
            parent::setGameOver();
            $message = new stdClass();
            $message->head = "Scherzkeks!";
            $message->text = "Das heisst für dich Game-Over.";
-       }
+       }*/
        echo json_encode( $message );
     }
 
