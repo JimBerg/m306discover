@@ -42,9 +42,18 @@ class User extends Jay_Controller {
         if( empty( $this->user ) ) {
             $this->user = parent::getCurrentUser();
         }
+        $profile = $this->getUserProfile();
+        if( $profile->gameover == 1 ) {
+            $this->logout();
+            $this->data = array(
+                'subview' => 'user/content/gameOver'
+            );
+            $this->load->view( 'user/layout/_layout_main', $this->data );
+        }
         $this->data = array(
             'subview' => 'user/content/'.$view,
-            'user' => $this->user
+            'user' => $this->user,
+            'quest' => $this->getQuestDescription(),
         );
         $this->load->view( 'user/layout/_layout_main', $this->data );
     }
@@ -189,6 +198,7 @@ class User extends Jay_Controller {
         $this->data[ 'subview' ] = 'user/content/history';
         $this->data[ 'user' ] = $this->user;
         $this->data[ 'history' ] = $this->getUserHistory();
+        $this->data[ 'profile' ] = $this->getUserProfile();
         $this->load->view( 'user/layout/_layout_main', $this->data );
     }
 
@@ -251,6 +261,16 @@ class User extends Jay_Controller {
     }
 
     /**
+     *
+     */
+    protected function getQuestDescription()
+    {
+        $quest = $this->getUserLatestQuest();
+        $description = $this->quests_model->getBy( array( 'location_id' =>  $quest->location_id), true );
+        return $description;
+    }
+
+    /**
      * get location object - identified by location id
      *
      * @param $locationId
@@ -300,7 +320,7 @@ class User extends Jay_Controller {
                 'points' => $points,
                 'rank' => Helper::getRank( $points )
             );
-        } else if( $type == 'failure' ) {
+        } else if( $type = 'failure' ) {
             if( $model->counter < 3 ) {
                 //recalculate points and counter
                 $counter = $model->counter + 1;

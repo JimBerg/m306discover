@@ -11,12 +11,12 @@
  *
  */
 
-class Helper extends Jay_Controller {
+class Helper {
 
     public function __construct()
     {
-        parent::__construct();
-        $this->load->model( 'location_model' );
+        //parent::__construct();
+        //$this->load->model( 'location_model' );
     }
 
     public function index()

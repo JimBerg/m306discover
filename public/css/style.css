@@ -127,6 +127,13 @@ body {
     -webkit-tap-highlight-color: rgb(255,255,158);
 }
 
+input,
+input *,
+input[type="submit"] {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+}
 
 /** ---------------------------------------------------------
 * Typographic presets
@@ -215,6 +222,41 @@ header {
     opacity: 0.8;
     position: absolute;
 }
+
+/** ---------------------------------------------------------
+* Formelements
+* ----------------------------------------------------------*/
+input[type="submit"],
+input[type="button"],
+button {
+    height: 30px;
+    text-align: center;
+    width: 195px;
+    margin: 5px 0;
+    border: none;
+    display: block;
+    font-family: Avenir;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"]{
+    height: 24px;
+    width: 195px;
+    border: none;
+    background: #fff;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #a7a49f;
+    font-size: 18px;
+}
+
+input:focus {
+    font-style: italic;
+}
+
 
 /** ---------------------------------------------------------
 * Dialogs
@@ -426,7 +468,7 @@ ul#main-navigation li.active a {
 * Profile page
 * ----------------------------------------------------------*/
 .container.profile {
-    width: 270px;
+    width: 275px;
     margin: 0 0 20px 25px;
     float: left;
 }
@@ -556,8 +598,16 @@ ul#main-navigation li.active a {
         padding: 0 10px;
     }
 
+    ul#main-navigation li {
+        padding: 5px 14px 0px 0;
+    }
+
     #map {
-        height: 300px;
+        height: 220px;
+    }
+
+    #confirm-check-in {
+        margin-top: 20px;
     }
 
 }
@@ -573,6 +623,25 @@ only screen and ( min-device-pixel-ratio: 2 ) {
 
     }
 
+    #content {
+        margin: 5px 0 0 0;
+        padding: 0 0 10px 0;
+    }
+
+    /** ---------------------------------------------------------
+	* Profile page
+	* ----------------------------------------------------------*/
+    .container.profile {
+        margin: 5px 0 20px 25px;
+    }
+
+    #avatar {
+        background: url( '../images/avatar_dummy_big.png' ) center center no-repeat;
+        background-size: 59px 59px;
+    }
+
+    #profile-form input {
+        background: url( '../images/icon_edit.png' ) right center no-repeat transparent;
+        background-size: 24px 24px;
+    }
 }
-
-

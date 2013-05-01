@@ -35,7 +35,7 @@
                         </li>
                         <li>
                             <h3>Gesamt</h3>
-                            <div>80</div>
+                            <div><?php echo $profile->points; ?></div>
                         </li>
                     </ul>
                 </div>

@@ -64,7 +64,7 @@ class Game extends User {
     public function getVisitedLocations()
     {
         $markerCollection = array();
-        $history = parent::getUserHistory();
+        $history = $this->history_model->getBy( array( 'user_id' =>  $this->user->id, 'solved' => 1 ) );
         foreach( $history as $item ) {
             $location = $this->location_model->getBy( array( 'id' =>  $item->location_id ) );
             array_push( $markerCollection, $location );

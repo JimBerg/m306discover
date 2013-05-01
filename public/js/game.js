@@ -247,18 +247,22 @@ game.getCurrentQuest = function() {
  * @return String message
  */
 game.setCheckIn = function( event ) {
-    alert("checkin");
+   // alert("checkin");
     game.observer();
     $.ajax({
         type: 'GET',
         data: { 'lat': game.currentLat, 'lng': game.currentLng },
         url: baseUrl+'game/setCheckIn',
-        success: function( response ) {
-            console.log( response.text );
+        complete: function( response ) {
+            //console.log( response.text );
+            $( '.dialog' ).find( 'h1' ).empty().text( 'Erfolg' );
+            $( '.dialog' ).find( 'h2' ).empty().text( ''+response.text+'' );
+            $( '.dialog' ).find( 'a:first').remove();
+            $( '.dialog' ).find( 'a' ).empty().text( 'Schliessen' );
         },
         dataType: 'json'
     });
-    event.preventDefault();
+   // event.preventDefault();
 };
 
 /**
