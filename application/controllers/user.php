@@ -44,7 +44,7 @@ class User extends Jay_Controller {
         }
         $profile = $this->getUserProfile();
         if( $profile->gameover == 1 ) {
-            $this->logout();
+            //$this->logout();
             $this->data = array(
                 'subview' => 'user/content/gameOver'
             );
@@ -314,12 +314,13 @@ class User extends Jay_Controller {
             $this->history_model->save( $data );
 
             //update user
-            $profile = $this->profile_model->getBy( array( 'user_id' => $this->user->id ) );
+            $profile = $this->profile_model->getBy( array( 'user_id' => $this->user->id ), true );
             $points = $profile->points + $model->points;
             $data = array(
                 'points' => $points,
                 'rank' => Helper::getRank( $points )
             );
+            $this->profile_model->save( $data, $id = $this->user->id );
         } else if( $type = 'failure' ) {
             if( $model->counter < 3 ) {
                 //recalculate points and counter

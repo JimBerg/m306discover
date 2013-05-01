@@ -488,6 +488,7 @@ ul#main-navigation li.active a {
 .container.profile .profile-head {
     padding: 10px 15px;
     background: #04bdcc;
+    height: 60px;
 }
 
 .container.profile .profile-content {

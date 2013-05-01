@@ -87,7 +87,7 @@ class Helper extends Jay_Controller {
      * @param int $points
      * @return String $rank
      */
-    public static function setRank( $points )
+    public static function getRank( $points )
     {
         // TODO: some reasonable ranks and point distribution
         if( $points >= 0 && $points < 30 ) {

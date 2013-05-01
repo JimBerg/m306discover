@@ -99,19 +99,22 @@ class Game extends User {
 
                // return success message & new task
                $message = new stdClass();
-               $message->text = "Gratulation. Du hast den Spot gefunden.";
+               $message->head = "Gratulation.";
+               $message->text = "Du hast den Spot gefunden.";
            } else {
                //fail
                parent::updateHistory( 'failure' );
 
                // return failure message
                $message = new stdClass();
-               $message->text = "Sorry das war wohl nichts.";
+               $message->head = "Schade.";
+               $message->text = "Das war nicht der gesuchte Ort.";
            }
        } else {
            parent::setGameOver();
            $message = new stdClass();
-           $message->text = "Scherzkeks! Das heisst für dich Game-Over.";
+           $message->head = "Scherzkeks!";
+           $message->text = "Das heisst für dich Game-Over.";
        }
        echo json_encode( $message );
     }
